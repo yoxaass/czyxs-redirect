@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>正在进入网盘 · czyxs.cc.cd</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0b1220">
+<meta http-equiv="refresh" content="6;url=https://bj39524.apps.aliyunfile.com/">
+<style>
+  :root{
+    --bg1:#0b1220; --bg2:#132039; --card:rgba(255,255,255,.045);
+    --line:rgba(255,255,255,.10); --txt:#e9eefb; --dim:#8e9cb8;
+    --accent:#4f8cff; --accent2:#5ee0d0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:radial-gradient(1100px 620px at 78% -8%,#1d3b6b 0%,transparent 62%),
+               radial-gradient(900px 560px at 6% 106%,#123a3a 0%,transparent 58%),
+               linear-gradient(158deg,var(--bg1),var(--bg2));
+    color:var(--txt);
+    display:flex;align-items:center;justify-content:center;
+    padding:24px;min-height:100%;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    width:100%;max-width:430px;text-align:center;
+    background:var(--card);border:1px solid var(--line);
+    border-radius:22px;padding:42px 30px 34px;
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 26px 60px -20px rgba(0,0,0,.65);
+  }
+  .ring{width:62px;height:62px;margin:0 auto 24px;position:relative}
+  .ring::before,.ring::after{content:"";position:absolute;inset:0;border-radius:50%}
+  .ring::before{border:2px solid rgba(255,255,255,.09)}
+  .ring::after{
+    border:2px solid transparent;border-top-color:var(--accent);
+    border-right-color:var(--accent2);animation:spin 1.05s linear infinite;
+  }
+  .ring svg{position:absolute;inset:0;margin:auto;width:24px;height:24px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  h1{font-size:19px;font-weight:600;letter-spacing:.4px}
+  .route{
+    margin-top:10px;font-size:13px;color:var(--dim);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    word-break:break-all;
+  }
+  .route .arrow{color:var(--accent);font-weight:700}
+  .bar{
+    margin:26px auto 22px;height:3px;width:100%;max-width:250px;
+    background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;
+  }
+  .bar i{
+    display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));
+    animation:load 2.4s cubic-bezier(.35,.85,.4,1) forwards;
+  }
+  @keyframes load{0%{width:4%}55%{width:72%}100%{width:96%}}
+  .btn{
+    display:block;width:100%;padding:13px 18px;
+    border-radius:12px;text-decoration:none;font-size:14px;font-weight:600;
+    color:#fff;background:linear-gradient(120deg,var(--accent),#3f6fe0);
+    box-shadow:0 12px 26px -12px rgba(79,140,255,.9);
+  }
+  .hint{margin-top:16px;font-size:12px;line-height:1.7;color:var(--dim)}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="ring">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#4f8cff" stroke-width="1.8"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5h3.2l1.6 2H18.5A2.5 2.5 0 0 1 21 9.5v7A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/>
+    </svg>
+  </div>
+
+  <h1>正在进入网盘</h1>
+  <p class="route" id="route">czyxs.cc.cd <span class="arrow">&rarr;</span> 网盘入口</p>
+
+  <div class="bar"><i></i></div>
+
+  <a class="btn" id="manual" href="https://bj39524.apps.aliyunfile.com/" rel="noopener">没有自动跳转？点此直接进入</a>
+
+  <p class="hint">本页会把域名后的路径一并带到网盘，因此分享链接可直接用 czyxs.cc.cd 开头。</p>
+</main>
+
+<script>
+  (function () {
+    var BASE = "https://bj39524.apps.aliyunfile.com";
+    // GitHub Pages 对未知路径返回本页，这里保留原路径/查询串，实现"整站别名"
+    var path = (location.pathname && location.pathname !== "/") ? location.pathname : "/";
+    var url = BASE + path + location.search + location.hash;
+
+    var route = document.getElementById("route");
+    if (route) {
+      route.innerHTML = 'czyxs.cc.cd <span class="arrow">&rarr;</span> ' +
+                        url.replace(/^https?:\/\//, "");
+    }
+    var manual = document.getElementById("manual");
+    if (manual) { manual.href = url; }
+
+    setTimeout(function () { location.replace(url); }, 600);
+  })();
+</script>
+</body>
+</html>
